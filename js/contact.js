@@ -1,3 +1,4 @@
+// Check the contact form and show its details in a confirmation window.
 const contactForm = document.getElementById("contactForm");
 
 contactForm.addEventListener("submit", function (event) {
@@ -5,6 +6,7 @@ contactForm.addEventListener("submit", function (event) {
   contactForm.classList.add("was-validated");
   if (!contactForm.checkValidity()) return;
 
+// Create text elements for the message so user input stays plain text.
   const body = document.getElementById("modalBody");
   body.textContent = "";
   const lines = [

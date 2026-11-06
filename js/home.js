@@ -1,3 +1,4 @@
+// Show the latest saved activity on the home page.
 const activityList = document.getElementById("activityList");
 const activity = getList("activity");
 
@@ -11,6 +12,7 @@ for (const item of activity) {
   activityList.appendChild(li);
 }
 
+// Load a random quote and show a friendly message if it fails.
 const quoteBox = document.getElementById("quote");
 
 fetch("https://dummyjson.com/quotes/random")

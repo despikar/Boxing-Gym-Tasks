@@ -1,9 +1,11 @@
+/* Main welcome banner on the home page. */
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/gym.jpg");
   background-size: cover;      /* image fills the whole box */
   background-position: center; /* keeps the middle of the image visible */
   color: white;
 }
+/* Keeps the team emoji inside a round badge. */
 .avatar {
   width: 80px;
   height: 80px;

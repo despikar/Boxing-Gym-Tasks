@@ -8,9 +8,11 @@ const statusFilter = document.getElementById("statusFilter");
 const sortBy = document.getElementById("sortBy");
 const taskTable = document.getElementById("taskTable");
 
+// This stays set while the form is editing an existing task.
 let editingId = null;
 
 
+// Escape task text before putting it into the table HTML.
 function safe(text) {
   const div = document.createElement("div");
   div.textContent = text;
@@ -18,6 +20,7 @@ function safe(text) {
 }
 
 
+// Rebuild the table using the current search, filter, and sort settings.
 function showTasks() {
   const allTasks = getList("tasks");
   const search = searchBox.value.toLowerCase();
@@ -61,6 +64,7 @@ function showTasks() {
 }
 
 
+// Save a new task or update the one currently being edited.
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   form.classList.add("was-validated");
@@ -94,6 +98,7 @@ form.addEventListener("submit", function (event) {
 });
 
 
+// One listener handles buttons for every task row.
 taskTable.addEventListener("click", function (event) {
   const button = event.target.closest("button");
   if (!button) return;
@@ -127,6 +132,7 @@ taskTable.addEventListener("click", function (event) {
 });
 
 
+// Refresh the list whenever one of the controls changes.
 searchBox.addEventListener("input", showTasks);
 statusFilter.addEventListener("change", showTasks);
 sortBy.addEventListener("change", showTasks);

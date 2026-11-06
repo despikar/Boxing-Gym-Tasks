@@ -1,5 +1,6 @@
 
 
+// Keep the page links in one place so the same menu works everywhere.
 const pages = [
   ["index.html", "Home"],
   ["tasks.html", "Tasks"],
@@ -7,6 +8,7 @@ const pages = [
   ["contact.html", "Contact"]
 ];
 
+// Build the shared menu and mark the current page as active.
 function buildHeader() {
   const current = location.pathname.split("/").pop() || "index.html";
   let links = "";
@@ -36,6 +38,7 @@ function buildHeader() {
     </nav>`;
 }
 
+// Add the same footer to each page that loads this file.
 function buildFooter() {
   document.getElementById("site-footer").innerHTML = `
     <div class="container text-center py-4">
@@ -50,6 +53,7 @@ function buildFooter() {
 }
 
 // Dark mode: Bootstrap changes colours when <html> has data-bs-theme="dark"
+// Save the selected theme so it sticks when the page is reopened.
 function setTheme(theme) {
   document.documentElement.setAttribute("data-bs-theme", theme);
   localStorage.setItem("theme", theme);
