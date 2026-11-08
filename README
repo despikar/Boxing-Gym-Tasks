@@ -1,0 +1,66 @@
+# Iron Fist Boxing Gym Task Management Web App
+
+A small website for the coaches at Iron Fist Boxing Gym to keep track of jobs that need to get done, like ordering gloves, cleaning the ring, or preparing for a competition.
+
+The website has four pages: Home, Tasks, About, and Contact.
+
+## Features
+
+- Add tasks with a name, description, and due date
+- Edit or delete tasks
+- Mark tasks as completed
+- Search tasks as you type
+- Filter tasks by status: all, pending, or completed
+- Sort tasks by due date or name
+- View the total number of tasks, pending tasks, and completed tasks
+- See the five most recent task activities on the Home page
+- Use the site in light or dark mode
+- View a quote from the DummyJSON API on the Home page
+
+Tasks and activity are saved in the browser using `localStorage`, so they remain after the page is refreshed or the browser is reopened. The app does not use a server or database.
+
+## How the Task List Works
+
+Each task is saved with an ID, name, description, due date, and status. New tasks start as pending. When a task is finished, it can be marked as completed.
+
+The task table updates when tasks are added, edited, completed, or deleted. Search, filtering, and sorting also update the table.
+
+## Project Structure
+
+- `index.html` — Home page
+- `tasks.html` — Task list and task form
+- `about.html` — About page
+- `contact.html` — Contact page
+- `tasks.js` — Task list actions and display
+- `home.js` — Latest Activity and Home page quote
+- `storage.js` — Saves and loads tasks and activity from `localStorage`
+- `layout.js` — Shared header, footer, and dark mode behavior
+
+## How to Run It
+
+1. Download or clone this repository.
+2. Open the project folder in Visual Studio Code.
+3. Start the site with the Live Server extension.
+4. Open the local address shown by Live Server in your browser.
+
+## Lighthouse Results
+
+| Page | Performance | Accessibility | Best Practices | SEO |
+| Home | 84          | 100           | 100            | 100 |
+| Tasks | 88         | 95            | 100            | 100 |
+| About | 98         | 100           | 100            | 100 |
+| Contact | 97       | 100           | 77             | 100 |
+
+These scores came from testing the pages with Chrome Lighthouse in mobile mode.
+
+## Limitations
+
+Tasks cannot be assigned to individual people. The project also does not include priorities, charts, or a Kanban board.
+
+## Possible Improvements
+
+If I continue working on the project, I might add task priorities with colors, a chart, a Kanban board, and another page. I could also look into the issues reported by Lighthouse.
+
+## Project Link
+
+https://github.com/despikar/Boxing-Gym-Tasks
